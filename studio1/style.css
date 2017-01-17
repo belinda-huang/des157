@@ -1,0 +1,29 @@
+a {
+    color: lightslategrey;
+}
+
+a:hover {
+    color: hotpink;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family:'Avenir', serif;
+}
+ 
+h1, h2 {
+    color: white;
+}
+
+div {
+    float: left;
+}
+
+footer {
+    clear:both;
+}
+
+section {
+    width: center;
+}
