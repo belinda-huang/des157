@@ -1,5 +1,6 @@
 a {
     color: lightslategrey;
+    text-decoration: none;
 }
 
 a:hover {
@@ -9,9 +10,10 @@ a:hover {
 body {
     background-color: black;
     color: white;
-    font-family:'Avenir', serif;
+    font-family:'Andale Mono', serif;
+    font-size: .8em;
 }
- 
+
 h1, h2 {
     color: white;
 }

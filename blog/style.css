@@ -1,4 +1,36 @@
+a {
+    color: lightslategrey;
+    text-decoration: none;
+}
+
+a:hover {
+    color: hotpink;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family:'Andale Mono', serif;
+    font-size: .8em;
+}
+
 img {
     max-width: 75%;
     height: auto;
+}
+
+h1, h2 {
+    color: white;
+}
+
+div {
+    float: left;
+}
+
+footer {
+    clear:both;
+}
+
+section {
+    width: center;
 }

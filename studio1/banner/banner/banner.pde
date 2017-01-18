@@ -3,10 +3,13 @@
 
 void setup() {
   size(800,250);
-  background(0);
+  colorMode(HSB);
 }
 
 void draw() {
+  background(0,0,0,50); //re-draw background every frame
+  noStroke();
+  
   if (mousePressed){
     fill(0);
   }
