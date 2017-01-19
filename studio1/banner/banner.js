@@ -2,15 +2,14 @@
 //draw points according to y-height of cursor
 //changes color upon mouse press
 
-var yvals = [];
+var[] yvals;
 var yshade;
 var arrayindex = 0;
 
 function setup(){
-  var canvas = createCanvas(800, 250);
-  canvas.parent("#mySketch");
+  createCanvas(800, 250);
   noSmooth();
-  yvals = width;
+  yvals = new var[width];
 }
 
 function draw(){
