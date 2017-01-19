@@ -2,14 +2,14 @@
 //draw points according to y-height of cursor
 //changes color upon mouse press
 
-int yvals[];
+int[] yvals;
 int yshade;
 int arrayindex = 0;
 
 void setup(){
   size(800, 250);
   noSmooth();
-  yvals = width;
+  yvals = new int[width];
 }
 
 void draw(){
