@@ -3,11 +3,11 @@
 //changes color upon mouse press
 console.log("this is a js comment");
 
-var yvals = []; //**WHAT IS JS CONVERSION
+var yvals; //**WHAT IS JS CONVERSION
 var yshade;
 var arrayindex = 0;
-var width = "800";
-var height = "250";
+var width = 800;
+var height = 250;
 
 function setup(){
   var myCanvas = createCanvas(800, 250);
@@ -17,10 +17,10 @@ function setup(){
 }
 
 function draw(){
-  //background(0);
+  background(0);
 
   // marquee
-  for(var i = 1; i < 800; i++){
+  for(var i = 1; i < width; i++){
     yvals[i-1] = yvals[i];
   }
 
