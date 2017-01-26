@@ -26,29 +26,81 @@
         h2 {
             font-size: .8em;
         }
+        article {
+          margin-top: 10px;
+        }
     </style>
 </head>
 
 <body>
-    <h1>Chapter 2: Looping a Triangle</h1>
-    <h2>open the console to see the results of the script</h2>
+    <h1>Chapter 3: Returning the smallest argument</h1>
+    <h2>Enter two numbers below to compare.</h2>
+
+
+    <article>
+        <form name="compare">
+              <label>Compare this number </label>
+              <input type="value" name="num1">
+              <label> with </label>
+              <input type="value" name="num2">
+              <input type="reset" value="reset" />
+              <input type="submit" value="submit" />
+        </form>
+    </article>
+
+    <article>
+        <p id="resultMsg"></p>
+    </article>
+
     <script>
+        //user input two arguments, function finds minimum between them, returns result output
+        console.log('reading');
+        //capture submit event and define process function
+        document.f.onsubmit = processForm;
+        function processForm() {
+            var num1 = document.f.num1.value;
+            var num2 = document.f.num2.value;
+            var result = min(num1, num2);
+            var resultMsg=document.getElementById('resultMsg');
+            resultMsg.innerHTML="Between " + num1 + ' and ' + num2 + ", " + result + " is the smaller number.";
 
-           //declare empty variable for hashtag
-           var hash = "";
-           //for-loop to create a 7-row triangle of hashtags
-           for (var i = 0; i < 7 ; i+=1) {
-               hash += "#";
-               console.log(hash);
-           }
+            return false;
+        }
+        function min(num1, num2) {
+            if(num1 < num2) {
+                return num1;
+            } else if(num1 > num2) {
+                return num2;
+            } else if(num1 == num2) {
+                return "Your inputs have the same value!";
+            }
+        }
 
-  /*
-        var hash = "";
 
-        for (var i = 0; i < 7, i++) {
-          hash = hash + "#";
-          console.log(hash);
-        } */
+
+/*
+
+        document.f.onsubmit = processForm; // set form to function
+
+        function processForm() {
+            var val1, val2, val3; // initiate values
+            val1 = parseInt(document.f.num1.value); // value of first number, parse to integer cause value retrieved is string
+            val2 = parseInt(document.f.num2.value); // value of second number
+            val3 = min(val1, val2); // call min function
+            document.getElementById("min").innerHTML = "<strong>" + val3 + "</strong> is the minimum between the 2 numbers."; // set HTML text
+
+            return false; // prevent page reload
+        }
+
+        function min(a,b) { // "min" function that accepts 2 values: a, b
+            if (a < b) { // if a is less than b, return a
+                return a;
+            } else { // else return b
+                return b;
+            }
+        }
+*/
+
     </script>
 </body>
 </html>
