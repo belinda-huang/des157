@@ -11,16 +11,21 @@
             padding: 0px
         }
 
-        body {
-            font-family: Verdana, Geneva, sans-serif;
-            color: white;
-            background-color: #333;
-            font-size: 11px;
-            margin: 24px;
+        body{
+            font-family: 'Andale Mono', sans-serif;
+            color: hotpink;
+            background-color: #222;
+            font-size: 1em;
+            margin: 100px;
+            width: 200px;
         }
 
         h1 {
             margin-bottom: 24px;
+            color: white;
+        }
+        h2 {
+            font-size: .8em;
         }
     </style>
 </head>
@@ -30,9 +35,9 @@
     <h2>open the console to see the results of the script</h2>
     <script>
 
-           // This script creates a 7-row triangle of pound signs using a for loop.
+           //declare empty variable for hashtag
            var hash = "";
-
+           //for-loop to create a 7-row triangle of hashtags
            for (var i = 0; i < 7 ; i+=1) {
                hash += "#";
                console.log(hash);
