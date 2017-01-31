@@ -67,7 +67,12 @@
           var num1=document.f.num1.value;
           var num2=document.f.num2.value;
           var result=min(num1, num2);
-          document.getElementById("myMsg").innerHTML = result + " is smaller between the two.";
+          if (result == false) {
+            document.getElementById("myMsg").innerHTML = "Your inputs have the same value! Why do you do this?";
+          }
+          else {
+            document.getElementById("myMsg").innerHTML = result + " is smaller between the two.";
+          }
           return false;
         }
 
@@ -78,7 +83,7 @@
             } else if(a > b) {
                 return b;
             } else if(a == b) {
-                return "Your inputs have the same value!";
+                return false;
             }
         }
 
