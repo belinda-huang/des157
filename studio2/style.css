@@ -15,10 +15,15 @@ body {
     font-size: .9em;
     margin: auto;
     padding: 50px;
-
+    background-image: url("images/windowsBackground.png");
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-attachment: fixed;
+    background-size: 100% 100%;
 }
 h1, h2 {
     color: white;
+    font-size: 3em;
 }
 
 
@@ -40,6 +45,9 @@ section {
     margin: auto;
     padding-top: 50px;
     padding-bottom: 20px;
+}
+input {
+  margin-top: 10px;
 }
 #response {
   width: 400px;
