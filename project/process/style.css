@@ -1,46 +1,51 @@
 @charset "UTF-8";
-
 a {
-    color: lightslategrey;
-    text-decoration: none;
+  background-color: black;
+  color: lightslategrey;
+  text-decoration: none;
 }
 
 a:hover {
-    color: hotpink;
+  background-color: black;
+  color: hotpink;
 }
 
 body {
-    background-color: black;
-    color: white;
-    font-family:'Andale Mono', serif;
-    font-size: .8em;
-
+  background-color: black;
+  color: white;
+  font-family: 'Andale Mono', serif;
+  font-size: .8em;
 }
 
 h1, h2 {
-    color: white;
+  background-color: black;
+  color: white;
 }
 
 div {
-    width: 33%;
-    float: left;
+  width: 33%;
+  float: left;
 }
 
 footer {
-    clear:both;
-    padding-top: 80px;
-    text-decoration: none;
-    text-align: center;
+  clear: both;
+  padding-top: 80px;
+  text-decoration: none;
+  text-align: center;
 }
 
 section {
-    width: 700px;
-    margin: auto;
-    padding-top: 50px;
-    padding-bottom: 20px;
+  width: 700px;
+  margin: auto;
+  padding-top: 50px;
+  padding-bottom: 20px;
 }
 
 ul {
   list-style-type: none;
   padding-left: 0;
+}
+
+article {
+  padding-bottom: 50px;
 }
