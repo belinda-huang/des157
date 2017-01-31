@@ -41,95 +41,46 @@
 
 
     <article>
-        <form name="compare">
+        <form name="f">
               <label>Compare </label>
               <input type="number" name="num1" size="10" placeholder="this number">
               <label> with </label>
               <input type="number" name="num2" size="10" placeholder="another number">
-              <button type="reset" value="reset">Reset</button>
-              <button type="submit" value="submit">Submit</button>
+              <input type="reset" value="reset"/>
+              <input type="submit" value="submit"/>
         </form>
 
-        <section id="results"></section>
+        <section id="results">
+          <p id="myMsg"></p>
+        </section>
     </article>
 
     <script>
-        //user input two arguments, function finds minimum between them, returns result output
         console.log('reading');
+
         //form set to function
-        //capture submit event and define process function
-        document.f.onsubmit = findMin;
-        function findMin() {
-            var num1 = parseInt(document.f.num1.value);
-            var num2 = parseInt(document.f.num2.value);
-            var result = min(num1, num2);
-            /*document.getElementById('resultMsg').innerHTML= "Between " + num1 + ' and ' + num2 + ", " + result + " is the smaller number.";*/
+        document.f.onsubmit = processForm;
 
-
-            /*
-            var resultMsg=document.getElementById("resultMsg");
-            resultMsg.innerHTML = "Between " + num1 + ' and ' + num2 + ", " + result + " is the smaller number.";
-            return false;
+        //accept user input and call min function
+        //receive function result and output to myMsg
+        function processForm() {
+          var num1=document.f.num1.value;
+          var num2=document.f.num2.value;
+          var result=min(num1, num2);
+          document.getElementById("myMsg").innerHTML = result + " is smaller between the two.";
+          return false;
         }
-        function min(num1, num2) {
-            if(num1 < num2) {
-                return num1;
-            } else if(num1 > num2) {
-                return num2;
-            } else if(num1 == num2) {
+
+        //function find minimum and return result
+        function min(a, b) {
+            if(a < b) {
+                return a;
+            } else if(a > b) {
+                return b;
+            } else if(a == b) {
                 return "Your inputs have the same value!";
             }
         }
-
-
-                document.f.onsubmit = processForm; // set form to function
-
-                function processForm() {
-                    var val1, val2, val3; // initiate values
-                    val1 = parseInt(document.f.num1.value); // value of first number, parse to integer cause value retrieved is string
-                    val2 = parseInt(document.f.num2.value); // value of second number
-                    val3 = min(val1, val2); // call min function
-                    document.getElementById("results").innerHTML = "<strong>" + val3 + "</strong> is the minimum between the 2 numbers."; // set HTML text
-
-                    return false; // prevent page reload
-                }
-
-                function min(a,b) { // "min" function that accepts 2 values: a, b
-                    if (a < b) { // if a is less than b, return a
-                        return a;
-                    } else { // else return b
-                        return b;
-                    }
-                }
-
-
-
-
-/*
-
-        document.f.onsubmit = processForm; // set form to function
-
-        function processForm() {
-            var val1, val2, val3; // initiate values
-            val1 = parseInt(document.f.num1.value); // value of first number, parse to integer cause value retrieved is string
-            val2 = parseInt(document.f.num2.value); // value of second number
-            val3 = min(val1, val2); // call min function
-            document.getElementById("min").innerHTML = "<strong>" + val3 + "</strong> is the minimum between the 2 numbers."; // set HTML text
-
-            return false; // prevent page reload
-        }
-
-        function min(a,b) { // "min" function that accepts 2 values: a, b
-            if (a < b) { // if a is less than b, return a
-                return a;
-            } else { // else return b
-                return b;
-            }
-        }
-*/
-
-
-
 
     </script>
 </body>
