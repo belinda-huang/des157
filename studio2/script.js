@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         /*if (username || food || number || color || sport || adverb || verb || adjective || place || family || saying == "") {
           alert('Hi please fill out all items. Pls.');
         }*/
-        document.getElementById("userName").innerHTML = "SmarterChild: ";
+        document.getElementById("bot").innerHTML = "SmarterChild: ";
         document.getElementById("userName").innerHTML = name+"baby"+number + ": ";
         document.getElementById("userMsg").innerHTML = "today I ate some " + food;
 

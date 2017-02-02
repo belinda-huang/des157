@@ -62,8 +62,11 @@ input {
   margin-top: 10px;
 }
 #response {
-  width: 400px;
+  
 }
+#response
+
+
 #userName {
     background-color: white;
     font-family: "Times New Roman";
