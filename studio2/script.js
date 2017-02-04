@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       //define process function
       function processForm(e) {
         e.preventDefault();
-
+        section.style.display="block";
         //store user name in a variable
         var name = document.f.name.value;
         var food = document.f.food.value;
@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         var place = document.f.place.value;
         var family = document.f.family.value;
         var saying = document.f.saying.value;
+
 
         /*if (username || food || number || color || sport || adverb || verb || adjective || place || family || saying == "") {
           alert('Hi please fill out all items. Pls.');
