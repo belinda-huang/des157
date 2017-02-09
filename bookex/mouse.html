@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chapter 14: Mouse Trail</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px
+        }
+        .trail { /* className for the trail elements */
+            position: absolute;
+            height: 6px; width: 6px;
+            border-radius: 3px;
+            background: hotpink;
+          }
+        body{
+            font-family: 'Andale Mono', sans-serif;
+            color: hotpink;
+            background-color: #212121;
+            font-size: 1em;
+            margin: 100px;
+            width: 200px;
+            height:300px;
+        }
+        h1 {
+            margin-bottom: 24px;
+            color: white;
+        }
+        h2 {
+            font-size: .8em;
+        }
+        article, section {
+          margin-top: 10px;
+        }
+        form {
+          width: 400px;
+        }
+        #hat {
+          width: 200px;
+        }
+        #center {
+          position:fixed;
+          top: 30%;
+          left: 30%;
+        }
+
+    </style>
+  </head>
+
+  <body>
+    <h1>Chapter 14: Mouse Trail</h1>
+
+    <script>
+        console.log('reading');
+
+              var dots = [];
+              for (var i = 0; i < 30; i++) {
+                  var node = document.createElement("div");
+                  node.className = "trail";
+                  document.body.appendChild(node);
+                  dots.push(node);
+              }
+              var currentDot = 0;
+
+              addEventListener("mousemove", function(event) {
+                  var dot = dots[currentDot];
+                  dot.style.left = (event.pageX - 1) + "px";
+                  dot.style.top = (event.pageY - 1) + "px";
+                  currentDot = (currentDot + 1) % dots.length;
+              });
+
+    </script>
+  </body>
+</html>
+
+<!--cat img: https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwiry72kqvLRAhWHxVQKHbz3BHYQjRwIBw&url=%2Furl%3Fsa%3Di%26rct%3Dj%26q%3D%26esrc%3Ds%26source%3Dimages%26cd%3D%26ved%3D0ahUKEwiry72kqvLRAhWHxVQKHbz3BHYQjRwIBw%26url%3Dhttps%253A%252F%252Fwww.tumblr.com%252Ftagged%252Ftransparent-grumpy-cat%26bvm%3Dbv.146094739%2Cd.cGw%26psig%3DAFQjCNEse0gGLunD0CyXYcb_DEExg8Ad_g%26ust%3D1486156219737346&bvm=bv.146094739,d.cGw&psig=AFQjCNEse0gGLunD0CyXYcb_DEExg8Ad_g&ust=1486156219737346
+hat img: http://www.pngmart.com/files/3/Fancy-Hat-Transparent-PNG.png"-->
