@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
       //time element for note
       for (var i = 0; i < elements.length; i++) {
       elements[i].addEventListener ('mouseover', function(event){
-        // what if I wanted to send a parameter ('eat') with the call to showMsg?
+        //
         noteId = document.getElementById(this.id);
         noteTimer = setTimeout(showMsg, 1000);
       });
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function() {
       }
 
       function showMsg(){
-        //can I use "this" to find out which object called the function?
+        //use "this" to find out which object called the function
         noteId.style.opacity = 1;
       }
 
@@ -58,30 +58,5 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-    /*
-    var numberOfDays = document.getElementById('numberOfDays');
-    var today = new Date(); // today's date
-    var threethou = new Date(3000,0,1); // months are 0-11
-
-    // find out the absolute difference between the
-    // two date objects with the getTime() method
-    var timeDiff = Math.abs(today.getTime() - threethou.getTime());
-
-    // convert from milliseconds to days by
-    // dividing by milliseconds * minutes * hours
-    var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
-    var diffHours = Math.ceil(timeDiff / (1000 * 3600));
-    var diffMin = Math.ceil(timeDiff / (1000 * 60));
-    var diffSec = Math.ceil(timeDiff/ (1000));
-    numberOfDays.innerHTML = diffDays;
-    numberOfHours.innerHTML = diffHours;
-    numberOfMin.innerHTML = diffMin;
-    numberOfSec.innerHTML = diffSec;
-    */
-
-
-
-    // update the calculation to find out how many days until your next birthday
-    // all other js here
 
 });
