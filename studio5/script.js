@@ -1,55 +1,46 @@
-// JavaScript Document
+//belinda huang 2017-01-18
+//draw points according to y-height of cursor
+//changes color upon mouse press
+console.log("this is a js comment");
 
-document.addEventListener("DOMContentLoaded", function() {
-      console.log("DOM fully loaded and parsed");
+var yvals; //**WHAT IS JS CONVERSION
+var yshade;
+var arrayindex = 0;
+var width = 800;
+var height = 250;
 
-      //preload audio content
-      function preload(){
-        sound = loadSound('assets/blueFaces.mp3');
-      }
+function setup(){
+  var myCanvas = createCanvas(800, 250);
+  myCanvas.parent('mySketch');
+  background(0); //newbackground
+  yvals = [width]; //***
+}
 
-      function setup(){
-        var canvas = createCanvas(900,300);
-        canvas.parent('mySketch');
-        canvas.mouseClicked(togglePlay);
-        fft = new p5.FFT();
-        sound.amp(0.2);
-      }
+function draw(){
+  background(0);
 
-      function draw(){
-        background(0);
+  // marquee
+  for(var i = 1; i < width; i++){
+    yvals[i-1] = yvals[i];
+  }
 
-        var spectrum = fft.analyze();
-        noStroke();
-        fill(0,255,0); // spectrum is green
-        for (var i = 0; i< spectrum.length; i++){
-          var x = map(i, 0, spectrum.length, 0, width);
-          var h = -height + map(spectrum[i], 0, 255, height, 0);
-          rect(x, height, width / spectrum.length, h )
-        }
+  // height input
+  yvals[width-1] = mouseY;
 
-        var waveform = fft.waveform();
-        noFill();
-        beginShape();
-        stroke(255,0,0); // waveform is red
-        strokeWeight(1);
-        for (var i = 0; i< waveform.length; i++){
-          var x = map(i, 0, waveform.length, 0, width);
-          var y = map( waveform[i], -1, 1, 0, height);
-          vertex(x,y);
-        }
-        endShape();
+  // color change
+  if(mouseIsPressed){
+    yshade = 255;
+  } else {
+    yshade = 60;
+  }
 
-        text('click to play/pause', 4, 10);
-      }
+  // center line
+  stroke(20);
+  line(0, height/2, width, height/2);
 
-      // fade sound if mouse is over canvas
-      function togglePlay() {
-        if (sound.isPlaying()) {
-          sound.pause();
-        } else {
-          sound.loop();
-        }
-      }
-
-});
+  // where da points at
+  for(var i=1; i<width; i++){
+    stroke(yshade);
+    point(i, yvals[i]/1);
+  }
+}

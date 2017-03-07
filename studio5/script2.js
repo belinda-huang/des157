@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var mic, fft;
 
     function setup() {
-       var canvas = createCanvas(900,300);
+       var myCanvas = createCanvas(900,300);
        canvas.parent('mySketch');
        noFill();
 
