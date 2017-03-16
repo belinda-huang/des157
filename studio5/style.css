@@ -21,10 +21,6 @@ h1, h2 {
     color: white;
 }
 
-div {
-    width: 33%;
-    float: left;
-}
 
 footer {
     clear:both;
@@ -34,7 +30,8 @@ footer {
 }
 
 section {
-    width: 700px;
+    float: left;
+    width: 900px;
     margin: auto;
     padding-top: 50px;
     padding-bottom: 20px;

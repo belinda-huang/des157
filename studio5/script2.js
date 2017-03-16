@@ -1,31 +1,25 @@
-// JavaScript Document
+console.log("this is a js comment");
 
-document.addEventListener("DOMContentLoaded", function() {
-      console.log("DOM fully loaded and parsed");
+var mic, fft;
 
-    var mic, fft;
+function setup() {
+   createCanvas(710,400);
+   noFill();
 
-    function setup() {
-       var myCanvas = createCanvas(900,300);
-       canvas.parent('mySketch');
-       noFill();
+   mic = new p5.AudioIn();
+   mic.start();
+   fft = new p5.FFT();
+   fft.setInput(mic);
+}
 
-       mic = new p5.AudioIn();
-       mic.start();
-       fft = new p5.FFT();
-       fft.setInput(mic);
-    }
+function draw() {
+   background(225);
 
-    function draw() {
-       background(200);
+   var spectrum = fft.analyze();
 
-       var spectrum = fft.analyze();
-
-       beginShape();
-       for (i = 0; i<spectrum.length; i++) {
-        vertex(i, map(spectrum[i], 0, 255, height, 0) );
-       }
-       endShape();
-    }
-
-});
+   beginShape();
+   for (i = 0; i<spectrum.length; i++) {
+    vertex(i, map(spectrum[i], 0, 255, height, 0) );
+   }
+   endShape();
+}
